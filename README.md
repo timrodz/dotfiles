@@ -6,6 +6,11 @@ Every folder contains a shell script that synchronizes the settings from this re
 
 ```shell
 chmod +x dir/sync.sh
-cd dir # It's important you cd to the specific `dir` to minimize failures
+```
+
+It's highly recommended to run all commands from the directory they're stored in.
+
+```shell
+cd dir
 ./sync.sh
 ```

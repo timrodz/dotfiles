@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-echo "synchronizing settings for OSX"
+echo "synchronizing OSX settings (remote to local)"
 
 cp .skhdrc $HOME/.skhrdc
 cp .yabairc $HOME/.yabairc

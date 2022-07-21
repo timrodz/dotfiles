@@ -42,7 +42,4 @@ yabai -m rule --add title='Preferences$' manage=off
 # float settings windows
 yabai -m rule --add title='Settings$' manage=off
 
-# If laptop has slant:
-yabai -m config external_bar all:32:0
-# If laptop has no slant:
-yabai -m config external_bar all:0:26
+yabai -m config external_bar all:26:0

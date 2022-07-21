@@ -2,7 +2,7 @@
 
 echo "synchronizing OSX settings (remote to local)"
 
-cp .skhdrc $HOME/.skhrdc
+cp .skhdrc $HOME/.skhdrc
 cp m1/.yabairc $HOME/.yabairc
 cp m1/.spacebarrc $HOME/.spacebarrc
 

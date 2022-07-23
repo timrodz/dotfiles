@@ -9,9 +9,18 @@ alt + shift - return : open -n /Applications/Google\ Chrome.app
 # Toggle between bsp and stack mode
 alt + shift - space : yabai -m space --layout "$(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "stack" else "bsp" end')"
 
+# toggle window fullscreen
+alt - f : chunkc tiling::window --toggle fullscreen
+
+# toggle window native fullscreen
+shift + alt - f : chunkc tiling::window --toggle native-fullscreen
+
+# equalize size of windows
+shift + alt - 0 : chunkc tiling::desktop --equalize
+
 # Desktop focus
-alt + cmd - left : yabai -m space --focus prev
-alt + cmd - right : yabai -m space --focus next
+alt + ctrl - left : yabai -m space --focus prev
+alt + ctrl - right : yabai -m space --focus next
 alt - z : yabai -m space --focus recent
 alt - 1 : yabai -m space --focus 1
 alt - 2 : yabai -m space --focus 2

@@ -3,8 +3,8 @@
 echo "synchronizing OSX settings (remote to local)"
 
 cp .skhdrc $HOME/.skhdrc
-cp m1/.yabairc $HOME/.yabairc
-cp m1/.spacebarrc $HOME/.spacebarrc
+cp .yabairc $HOME/.yabairc
+cp .spacebarrc $HOME/.spacebarrc
 
 echo "restarting brew"
 

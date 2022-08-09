@@ -59,3 +59,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Apply if alacritty has been built
+# source $HOME/alacritty/extra/completions/alacritty.bash

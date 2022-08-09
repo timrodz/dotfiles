@@ -3,7 +3,7 @@ ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # Application Shortcuts
 ctrl + shift - n : open ~
-ctrl - return : open -n /Applications/Tabby.app
+ctrl - return : open -n /Applications/Alacritty.app
 ctrl + shift - return : open -n /Applications/Google\ Chrome.app
 
 # Toggle between bsp and stack mode

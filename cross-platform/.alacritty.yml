@@ -4,7 +4,6 @@ window:
     x: 10
     y: 10
   opacity: 0.9
-  decorations: "none"
 
 scrolling:
   # Specifying '0' will disable scrolling.

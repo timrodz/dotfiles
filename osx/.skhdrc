@@ -6,8 +6,8 @@ ctrl + shift - n : open ~
 ctrl - return : open -n /Applications/Alacritty.app
 ctrl + shift - return : open -n /Applications/Google\ Chrome.app
 
-cmd + shift - left : yabai -m space --focus prev
-cmd + shift - right : yabai -m space --focus next
+cmd + alt + shift - left : yabai -m space --focus prev
+cmd + alt + shift - right : yabai -m space --focus next
 
 cmd + ctrl - 1 : yabai -m space --focus 1
 cmd + ctrl - 2 : yabai -m space --focus 2

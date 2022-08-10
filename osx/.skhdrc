@@ -6,17 +6,16 @@ ctrl + shift - n : open ~
 ctrl - return : open -n /Applications/Alacritty.app
 ctrl + shift - return : open -n /Applications/Google\ Chrome.app
 
-alt + shift - o : yabai -m space --focus prev
-alt + shift - p : yabai -m space --focus next
+ctrl + alt + shift - o : yabai -m space --focus prev
+ctrl + alt + shift - p : yabai -m space --focus next
 
-alt + shift - x : yabai -m space --focus 1
-alt + shift - c : yabai -m space --focus 2
-alt + shift - v : yabai -m space --focus 3
-alt + shift - b : yabai -m space --focus 4
-alt + shift - n : yabai -m space --focus 5
-alt + shift - m : yabai -m space --focus 6
-# alt + shift - k : yabai -m space --focus 7
-# alt + shift - l : yabai -m space --focus 8
+ctrl + alt + shift - 0 : yabai -m space --focus 1
+ctrl + alt + shift - 1 : yabai -m space --focus 2
+ctrl + alt + shift - 2 : yabai -m space --focus 3
+ctrl + alt + shift - 3 : yabai -m space --focus 4
+ctrl + alt + shift - 4 : yabai -m space --focus 5
+ctrl + alt + shift - 5 : yabai -m space --focus 6
+ctrl + alt + shift - 6 : yabai -m space --focus 7
 
 # Move windows to certain spaces
 # alt + ctrl + shift - x : yabai -m window --space  1; yabai -m space --focus 1

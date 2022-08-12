@@ -49,9 +49,9 @@ export TERM="xterm-256color"
 # export P4PORT=1666
 
 # OPTIONAL: asdf
-# . $HOME/.asdf/asdf.sh
-# fpath=(${ASDF_DIR}/completions $fpath)
-# autoload -Uz compinit && compinit
+. $HOME/.asdf/asdf.sh
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
 
 # NVM
 export NVM_DIR="$HOME/.nvm"

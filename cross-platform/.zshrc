@@ -35,11 +35,18 @@ bindkey "^[[1;9C" end-of-line
 alias gs="git status"
 alias gc="git checkout"
 alias gap="git add -p"
+alias gbd="git branch -D"
 alias push="git push"
 alias pull="git pull"
-alias pom="pull origin master"
-alias m="git checkout master"
+alias diff="git diff --cached"
+alias pom="pull origin main"
+alias m="git checkout main"
 alias src="cd $HOME/src"
+alias docker-stopall="docker stop $(docker ps -a -q)"
+
+alias plex="cd $HOME/plexinc"
+alias mp="cd $HOME/plexinc/media-providers"
+alias wc="cd $HOME/plexinc/plex-web-client"
 
 # This sets up colors properly
 export TERM="xterm-256color"
@@ -47,11 +54,6 @@ export TERM="xterm-256color"
 # Perforce
 # export PATH=$HOME/helix-core-server:$PATH
 # export P4PORT=1666
-
-# OPTIONAL: asdf
-. $HOME/.asdf/asdf.sh
-fpath=(${ASDF_DIR}/completions $fpath)
-autoload -Uz compinit && compinit
 
 # NVM
 export NVM_DIR="$HOME/.nvm"

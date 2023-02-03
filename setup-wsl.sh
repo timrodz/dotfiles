@@ -9,7 +9,7 @@ cd $HOME
 
 echo '\nWelcome to the setup wizard! You will be up and running in a few minutes'
 
-echo '\n> Setting up git config'
+echo '\n> Setting up the git config'
 git config --global user.name 'Juan Morais'
 git config --global user.email 'timrodz@icloud.com'
 git config --global pull.rebase true
@@ -28,12 +28,19 @@ git clone https://github.com/gpakosz/.tmux.git
 ln -s -f .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
 
-echo '\n> keychain'
+echo '\n> Installing an SSH keychain'
 apt install keychain
+
+echo '\n> Installing Volta (Package manager)'
+curl https://get.volta.sh | bash
+
+echo '\n> Installing Make
+apt install -y make
 
 echo '\n> Zsh'
 apt install zsh
 
+echo '\n> Updating packages'
 apt update
 
 echo '\n> Almost done! Please run the following commands manually (Installing Oh My Zsh will cause you to switch shells)\n'

@@ -68,4 +68,4 @@ fi
 # Apply if alacritty has been built
 # source $HOME/alacritty/extra/completions/alacritty.bash
 
-eval `keychain --quiet --eval --agents ssh id_ed25519`
+eval `keychain --quiet --eval --agents ssh $HOME/.ssh/id_ed25519`

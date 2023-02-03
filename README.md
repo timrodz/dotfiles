@@ -25,6 +25,7 @@ cd dir
 - zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
 - Tmux: `sudo apt install tmux`
 - Custom tmux: https://github.com/gpakosz/.tmux
+- git config --global pull.rebase true
 
 ### WSL
 

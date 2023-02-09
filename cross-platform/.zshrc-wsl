@@ -16,6 +16,7 @@ plugins=(
 
 export LANG=en_US.UTF-8
 export EDITOR='vim'
+
 source $ZSH/oh-my-zsh.sh
 
 # Custom bindings
@@ -35,12 +36,12 @@ alias pull="git pull"
 alias diff="git diff --cached"
 alias pom="pull origin main"
 alias m="git checkout main"
-alias src="cd $HOME/src"
+alias src="cd '$HOME/src'"
 alias dockerstopall="docker stop $(docker ps -a -q)"
 
-alias plex="cd $HOME/plexinc"
-alias mp="cd $HOME/plexinc/media-providers"
-alias wc="cd $HOME/plexinc/plex-web-client"
+alias plex="cd '$HOME/plexinc'"
+alias wc="cd '$HOME/plexinc/web-client'"
+alias mp="cd '$HOME/plexinc/media-providers'"
 
 # This sets up colors properly
 export TERM="xterm-256color"
@@ -55,17 +56,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$PATH:/mnt/c/Users/trodz/AppData/Local/Programs/Microsoft VS Code/bin"
 if grep -q "microsoft" /proc/version > /dev/null 2>&1; then
     if service docker status 2>&1 | grep -q "is not running"; then
         wsl.exe --distribution "${WSL_DISTRO_NAME}" --user root \
             --exec /usr/sbin/service docker start > /dev/null 2>&1
     fi
 fi
-
-export PATH="$PATH:/mnt/c/Users/trodz/AppData/Local/Programs/Microsoft VS Code/bin"
-
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

@@ -1,4 +1,4 @@
 i3-wm.gaps.inner.size: 0
 
 gnome.icon.theme:       Moka
-gnome.terminal.font:	JetBrains Mono 14
+gnome.terminal.font:	MesloLGS NF

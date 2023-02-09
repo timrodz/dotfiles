@@ -36,7 +36,7 @@ alias diff="git diff --cached"
 alias pom="pull origin main"
 alias m="git checkout main"
 alias src="cd $HOME/src"
-alias docker-stopall="docker stop $(docker ps -a -q)"
+alias dockerstopall="docker stop $(docker ps -a -q)"
 
 alias plex="cd $HOME/plexinc"
 alias mp="cd $HOME/plexinc/media-providers"
@@ -45,15 +45,15 @@ alias wc="cd $HOME/plexinc/plex-web-client"
 # This sets up colors properly
 export TERM="xterm-256color"
 
-# Perforce
-# export PATH=$HOME/helix-core-server:$PATH
-# export P4PORT=1666
+auth() {
+    export GPG_TTY=$(tty)
+    echo "test" | gpg --clearsign
+}
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
 if grep -q "microsoft" /proc/version > /dev/null 2>&1; then
     if service docker status 2>&1 | grep -q "is not running"; then
@@ -61,6 +61,8 @@ if grep -q "microsoft" /proc/version > /dev/null 2>&1; then
             --exec /usr/sbin/service docker start > /dev/null 2>&1
     fi
 fi
+
+export PATH="$PATH:/mnt/c/Users/trodz/AppData/Local/Programs/Microsoft VS Code/bin"
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"

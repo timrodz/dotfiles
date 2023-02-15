@@ -36,16 +36,27 @@ alias gbd="git branch -D"
 alias push="git push"
 alias pull="git pull"
 alias diff="git diff --cached"
-alias squashall="git reset --soft $(git merge-base main HEAD)"
 alias pom="pull origin main"
 alias pom="pull origin main --rebase"
 alias m="git checkout main"
 alias src="cd '$HOME/src'"
-alias dockerstopall="docker stop $(docker ps -a -q)"
 
-alias plex="cd $HOME/plexinc"
-alias mp="cd $HOME/plexinc/media-providers"
-alias wc="cd $HOME/plexinc/plex-web-client"
+alias plex="cd '$HOME/plexinc'"
+alias wc="cd '$HOME/plexinc/web-client'"
+alias mp="cd '$HOME/plexinc/media-providers'"
+
+squashall() {
+    git reset --soft $(git merge-base main HEAD)
+}
+
+dockerstopall() {
+    docker stop $(docker ps -a -q)
+}
+
+gpgauth() {
+    export GPG_TTY=$(tty)
+    echo "test" | gpg --clearsign
+}
 
 # This sets up colors properly
 export TERM="xterm-256color"
@@ -61,6 +72,9 @@ export NVM_DIR="$HOME/.nvm"
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# This sets up colors properly
+export TERM="xterm-256color"
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

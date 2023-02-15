@@ -31,21 +31,24 @@ alias gbd="git branch -D"
 alias push="git push"
 alias pull="git pull"
 alias diff="git diff --cached"
-alias squashall="git reset --soft $(git merge-base main HEAD)"
 alias pom="pull origin main"
 alias pom="pull origin main --rebase"
 alias m="git checkout main"
 alias src="cd '$HOME/src'"
-alias dockerstopall="docker stop $(docker ps -a -q)"
 
 alias plex="cd '$HOME/plexinc'"
 alias wc="cd '$HOME/plexinc/web-client'"
 alias mp="cd '$HOME/plexinc/media-providers'"
 
-# This sets up colors properly
-export TERM="xterm-256color"
+squashall() {
+    git reset --soft $(git merge-base main HEAD)
+}
 
-auth() {
+dockerstopall() {
+    docker stop $(docker ps -a -q)
+}
+
+gpgauth() {
     export GPG_TTY=$(tty)
     echo "test" | gpg --clearsign
 }
@@ -64,6 +67,9 @@ if grep -q "microsoft" /proc/version > /dev/null 2>&1; then
             --exec /usr/sbin/service docker start > /dev/null 2>&1
     fi
 fi
+
+# This sets up colors properly
+export TERM="xterm-256color"
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

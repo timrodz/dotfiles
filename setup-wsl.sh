@@ -48,7 +48,5 @@ echo '$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/ma
 echo '\n> Run these inside the zsh shell'
 echo '$ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions'
 echo '$ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k'
-echo 'Note: When installing powerlevel10k, select the Unicode setup'
 echo '$cd cross-platform && sh sync-to-machine-wsl.sh'
-echo '\n> All done! Please restart your terminal'
-echo '$ source ~/.zshrc'
+echo '\n> All done! Please restart your terminal app'

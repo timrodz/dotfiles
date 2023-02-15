@@ -1,6 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -39,10 +36,12 @@ alias gbd="git branch -D"
 alias push="git push"
 alias pull="git pull"
 alias diff="git diff --cached"
+alias squashall="git reset --soft $(git merge-base main HEAD)"
 alias pom="pull origin main"
+alias pom="pull origin main --rebase"
 alias m="git checkout main"
-alias src="cd $HOME/src"
-alias docker-stopall="docker stop $(docker ps -a -q)"
+alias src="cd '$HOME/src'"
+alias dockerstopall="docker stop $(docker ps -a -q)"
 
 alias plex="cd $HOME/plexinc"
 alias mp="cd $HOME/plexinc/media-providers"

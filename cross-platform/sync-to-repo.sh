@@ -7,5 +7,6 @@ cp $HOME/.tmux.conf.local .tmux.conf.local
 cp $HOME/.alacritty.yml .alacritty.yml
 cp $HOME/.gnupg/gpg-agent.conf gpg-agent.conf
 sudo /etc/wsl.conf cp wsl.conf
+cp $HOME/.p10k.zsh .p10k.zsh
 
 echo "done!"

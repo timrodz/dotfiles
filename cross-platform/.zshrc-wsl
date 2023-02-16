@@ -32,7 +32,7 @@ alias push="git push"
 alias pull="git pull"
 alias diff="git diff --cached"
 alias pom="pull origin main"
-alias pom="pull origin main --rebase"
+alias pomr="pull origin main --rebase"
 alias m="git checkout main"
 alias src="cd '$HOME/src'"
 

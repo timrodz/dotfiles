@@ -40,6 +40,10 @@ apt install -y make
 echo '\n> Zsh'
 apt install zsh
 
+echo '\n> Generating locales for en_US.UTF-8'
+sudo locale-gen "en_US.UTF-8"
+locale
+
 echo '\n> Updating packages'
 apt update
 

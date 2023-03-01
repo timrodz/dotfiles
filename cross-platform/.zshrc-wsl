@@ -11,8 +11,11 @@ plugins=(
     zsh-autosuggestions
 )
 
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR='vim'
+
 source $ZSH/oh-my-zsh.sh
 
 # Custom bindings
@@ -21,12 +24,6 @@ bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 bindkey "^[[1;4D" beginning-of-line
 bindkey "^[[1;4C" end-of-line
-
-# OS X
-bindkey "^[1;3D" backward-word
-bindkey "^[1;3C" forward-word
-bindkey "^[[1;9D" beginning-of-line
-bindkey "^[[1;9C" end-of-line
 
 # Custom aliases
 alias gs="git status"
@@ -58,13 +55,6 @@ gpgauth() {
     echo "test" | gpg --clearsign
 }
 
-# This sets up colors properly
-export TERM="xterm-256color"
-
-# Perforce
-# export PATH=$HOME/helix-core-server:$PATH
-# export P4PORT=1666
-
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -72,6 +62,13 @@ export NVM_DIR="$HOME/.nvm"
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$PATH:/mnt/c/Users/trodz/AppData/Local/Programs/Microsoft VS Code/bin"
+if grep -q "microsoft" /proc/version > /dev/null 2>&1; then
+    if service docker status 2>&1 | grep -q "is not running"; then
+        wsl.exe --distribution "${WSL_DISTRO_NAME}" --user root \
+            --exec /usr/sbin/service docker start > /dev/null 2>&1
+    fi
+fi
 
 # This sets up colors properly
 export TERM="xterm-256color"
@@ -80,3 +77,5 @@ export TERM="xterm-256color"
 
 # Apply if alacritty has been built
 # source $HOME/alacritty/extra/completions/alacritty.bash
+
+eval `keychain --quiet --eval --agents ssh $HOME/.ssh/id_ed25519`

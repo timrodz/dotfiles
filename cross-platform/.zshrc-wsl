@@ -38,10 +38,6 @@ alias pomr="pull origin main --rebase"
 alias m="git checkout main"
 alias src="cd '$HOME/src'"
 
-alias plex="cd '$HOME/plexinc'"
-alias wc="cd '$HOME/plexinc/web-client'"
-alias mp="cd '$HOME/plexinc/media-providers'"
-
 squashall() {
     git reset --soft $(git merge-base main HEAD)
 }

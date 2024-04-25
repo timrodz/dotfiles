@@ -14,15 +14,6 @@ import = []
 program = "/bin/zsh" # Example for Linux/BSD/macOS
 args = ["-l"]
 
-# Working directory
-working_directory = "None" # Default: "None"
-
-# Live config reload (changes require restart)
-live_config_reload = true # Default: true
-
-# Offer IPC using alacritty msg (unix only)
-ipc_socket = true # Default: true
-
 #######
 # ENV #
 #######
@@ -52,7 +43,7 @@ dynamic_padding = false # Default: false
 decorations = "Full" # Default: "Full"
 
 # Opacity
-opacity = 0.9 # Default: 1.0
+opacity = 1.0 # Default: 1.0
 
 # Blur (macOS/KDE Wayland only)
 blur = false # Default: false
@@ -97,7 +88,7 @@ multiplier = 3 # Default: 3
 [font]
 
 # Normal font style
-normal = { family = "JetBrains Mono", style = "Regular" } # Default for Linux/BSD: "monospace", Regular
+normal = { family = "MesloLGS NF", style = "Regular" } # Default for Linux/BSD: "monospace", Regular
 
 # Bold font style
 bold = { style = "Bold" } # Inherits family from normal, Default style: Bold

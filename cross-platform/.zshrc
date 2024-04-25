@@ -66,13 +66,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
 # This sets up colors properly
 export TERM="xterm-256color"
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Apply if alacritty has been built
+# Uncomment only if alacritty has been compiled (as opposed to downloaded and run as a normal app, i.e. via OSX)
 # source $HOME/alacritty/extra/completions/alacritty.bash

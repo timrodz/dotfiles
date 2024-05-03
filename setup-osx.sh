@@ -26,6 +26,10 @@ echo "\n> Installing the GitHub CLI"
 # https://cli.github.com/
 brew install gh
 
+echo "\n> Installing gnupg (GPG client)"
+
+brew install gnupg
+
 echo "\n> Installing Oh My Zsh (Mac already comes with ZSH as the default shell) + Plugins"
 
 # https://ohmyz.sh/#install
@@ -61,5 +65,5 @@ echo "\n> Cleaning up installs"
 
 brew cleanup
 
-echo "\n> You're all done! Few more manual tasks:\n1. Login with the GitHub CLI via 'gh auth login'\n2. Sync the configs from /cross-platform + /osx\n3. (Optional) Install the Alacritty terminal: https://alacritty.org/\n4. (Optional) Install VS Code: https://code.visualstudio.com/download\n5. Install Docker: https://www.docker.com/products/docker-desktop/\n6. (Optional) Install Raycast: https://www.raycast.com/"
+echo "\n> You're all done! Few more manual tasks:\n* Login with the GitHub CLI via 'gh auth login'\n* Sync the configs from /cross-platform + /osx\n* Setup your GPG key to sign commits (https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key) \n* (Optional) Install the Alacritty terminal: https://alacritty.org/\n* (Optional) Install VS Code: https://code.visualstudio.com/download\n* Install Docker: https://www.docker.com/products/docker-desktop/\n* (Optional) Install Raycast: https://www.raycast.com/"
 

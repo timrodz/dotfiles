@@ -1,3 +1,3 @@
 # Cross-platform config
 
-- tmux: https://github.com/gpakosz/.tmux
+- tmux: https://github.com/dreamsofcode-io/tmux/blob/main/tmux.conf

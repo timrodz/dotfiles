@@ -15,18 +15,17 @@ cd dir
 ./sync.sh
 ```
 
-## My apps
+## Setup
 
 This setup is clearly opinionated, but I chose these apps + configs because they're lightweight and work across all platforms.
+
+Font: `JetBrainsMono Nerd Font` (found in https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file#patched-fonts)
 
 ### Terminal
 
 - Zsh: https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
-- Oh My Zsh: https://ohmyz.sh/
 - Powerlevel10k: https://github.com/romkatv/powerlevel10k#oh-my-zsh
-- zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
 - tmux: https://github.com/tmux/tmux/wiki
-  - My tmux config: https://github.com/gpakosz/.tmux
 
 ### WSL
 

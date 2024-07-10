@@ -30,21 +30,6 @@ echo "\n> Installing gnupg (GPG client)"
 
 brew install gnupg
 
-echo "\n> Installing Oh My Zsh (Mac already comes with ZSH as the default shell) + Plugins"
-
-# https://ohmyz.sh/#install
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-echo "\n> Installing ZSH theme Powerlevel10k (OPTIONAL)"
-
-# https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#installation
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
-echo "\n> If you installed Powerlevel10k, it's recommended you install these fonts too: https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#meslo-nerd-font-patched-for-powerlevel10k"
-
 echo "\n> Installing NVM (Node Version Manager)"
 
 # https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating

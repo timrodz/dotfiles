@@ -2,11 +2,9 @@
 
 echo "synchronizing settings (remote to local)"
 
-cp .zshrc-wsl $HOME/.zshrc
-cp .tmux.conf.local $HOME/.tmux.conf.local
+cp .zshrc $HOME/.zshrc
+cp .tmux.conf $HOME/.tmux.conf
 cp .alacritty.toml $HOME/.alacritty.toml
-cp gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
 sudo cp wsl.conf /etc/wsl.conf
-cp .p10k.zsh $HOME/.p10k.zsh
 
 echo '\n> All done! Please restart your terminal app'

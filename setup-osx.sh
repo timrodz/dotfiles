@@ -15,6 +15,7 @@ echo "\n> Setting up the git config"
 git config --global user.name "Juan Morais"
 git config --global user.email "timrodz@icloud.com"
 git config --global pull.rebase true
+git config --global core.editor nvim
 
 echo "\n> Installing Homebrew"
 

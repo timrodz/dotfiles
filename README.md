@@ -21,14 +21,12 @@ This setup is clearly opinionated, but I chose these apps + configs because they
 
 Font: `JetBrainsMono Nerd Font` (found in https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file#patched-fonts)
 
-### Terminal
+### Terminal + Shell config
 
-- Zsh: https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
-- Powerlevel10k: https://github.com/romkatv/powerlevel10k#oh-my-zsh
+- Alacritty: https://alacritty.org/
+- Zsh: https://www.zsh.org/
+- Oh My Posh: https://ohmyposh.dev/
 - tmux: https://github.com/tmux/tmux/wiki
+- fzf: https://github.com/junegunn/fzf
+- zoxide: https://github.com/ajeetdsouza/zoxide
 
-### WSL
-
-- Github CLI: https://github.com/cli/cli/blob/trunk/docs/install_linux.md
-- Docker CLI (No desktop): https://nickjanetakis.com/blog/install-docker-in-wsl-2-without-docker-desktop
-- Keychain (Remember SSH phrases): `sudo apt install keychain`

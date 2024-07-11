@@ -11,20 +11,22 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 
   [[blocks.segments]]
     type = 'path'
-    style = 'plain'
-    background = 'transparent'
-    foreground = 'blue'
-    template = '{{ .Path }}'
+    style = 'diamond'
+    background = '#FEF5ED'
+    foreground = '#011627'
+    trailing_diamond = ""
+    template = ' {{ .Path }} '
 
     [blocks.segments.properties]
       style = 'full'
-
+  
   [[blocks.segments]]
     type = 'git'
-    style = 'plain'
-    foreground = 'p:grey'
-    background = 'transparent'
-    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+    style = 'diamond'
+    background = '#516BEB'
+    foreground = '#FFFFFF'
+    trailing_diamond = ""
+    template = " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <white>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</> "
 
     [blocks.segments.properties]
       branch_icon = ''
@@ -38,10 +40,18 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   [[blocks.segments]]
     type = 'node'
     style = 'diamond'
-    background = '#29315A'
-    foreground = '#3EC669'
+    background = '#17D7A0'
+    foreground = '#011627'
     leading_diamond = "\ue0ba"
     template = '  {{ .Full }} '
+
+  [[blocks.segments]]
+    type = 'elixir'
+    style = 'diamond'
+    background = '#17D7A0'
+    foreground = '#011627'
+    leading_diamond = "\ue0ba"
+    template = '  {{ .Full }} '
 
 [[blocks]]
   type = 'rprompt'
@@ -49,12 +59,10 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 
   [[blocks.segments]]
     type = 'executiontime'
-    style = 'diamond'
-    background = '#29315A'
-    foreground = '#43CCEA'
-    leading_diamond = "\ue0c5"
-    trailing_diamond = "\ue0bc"
-    template = '<transparent> / </> {{ .FormattedMs }} '
+    style = 'plain'
+    background = 'transparent'
+    foreground = '#FEF5ED'
+    template = '{{ .FormattedMs }}'
 
     [blocks.segments.properties]
       threshold = 5000
@@ -69,7 +77,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     style = 'plain'
     foreground_templates = [
       "{}red{{end}}",
-      "{{if eq .Code 0}}magenta{{end}}",
+      "{{if eq .Code 0}}#FF5795{{end}}",
     ]
     background = 'transparent'
     template = '❯'
@@ -77,12 +85,12 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 [transient_prompt]
   foreground_templates = [
     "{{if gt .Code 0}}red{{end}}",
-    "{{if eq .Code 0}}magenta{{end}}",
+    "{{if eq .Code 0}}#FF5795{{end}}",
   ]
   background = 'transparent'
   template = '❯ '
 
 [secondary_prompt]
-  foreground = 'magenta'
   background = 'transparent'
+  foreground = '#FF5795'
   template = '❯❯ '

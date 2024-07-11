@@ -15,7 +15,6 @@ echo "\n> Setting up the git config"
 git config --global user.name "Juan Morais"
 git config --global user.email "timrodz@icloud.com"
 git config --global pull.rebase true
-git config --global core.editor nvim
 
 echo "\n> Installing Homebrew"
 
@@ -31,6 +30,13 @@ echo "\n> Installing gnupg (GPG client)"
 
 brew install gnupg
 
+echo "\n> Terminal fun: Installing Alacritty + NeoVim + FZF + Zoxide"
+
+brew install --cask alacritty
+brew install neovim fzf zoxide
+
+git config --global core.editor nvim
+
 echo "\n> Installing NVM (Node Version Manager)"
 
 # https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
@@ -40,8 +46,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 echo "\n> Installing TMUX with a nice config"
 
 brew install tmux
-git clone https://github.com/gpakosz/.tmux.git
-ln -s -f .tmux/.tmux.conf
 
 echo "\n> (Optional) Installing UnnaturalScrollWheels (Makes mouse scrolling great again)"
 

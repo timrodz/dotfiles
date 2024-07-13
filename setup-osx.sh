@@ -21,39 +21,36 @@ echo "\n> Installing Homebrew"
 # https://brew.sh/
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo "\n> Installing the GitHub CLI"
+echo "\n> Installing the GitHub CLI + gnupg"
 
-# https://cli.github.com/
-brew install gh
+brew install gh gnupg
 
-echo "\n> Installing gnupg (GPG client)"
-
-brew install gnupg
-
-echo "\n> Terminal fun: Installing Alacritty + NeoVim + FZF + Zoxide"
+echo "\n> Terminal fun: Installing Alacritty + Tmux + NeoVim + FZF + Zoxide"
 
 brew install --cask alacritty
-brew install neovim fzf zoxide
+brew install neovim fzf zoxide tmux
 
 git config --global core.editor nvim
 
-echo "\n> Installing NVM (Node Version Manager)"
+echo "\n> Installing Node + dependencies"
 
-# https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
+brew install nvm
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+nvm install 18
 
-echo "\n> Installing TMUX with a nice config"
+echo "\n> Installing Mos for mouse movement. Recommended setup: Smooth Scrolling (On) / Step (45.00) / Speed (3.50) / Duration (3.90)"
 
-brew install tmux
-
-echo "\n> (Optional) Installing UnnaturalScrollWheels (Makes mouse scrolling great again)"
-
-brew install --cask unnaturalscrollwheels
+brew install mos
 
 echo "\n> Cleaning up installs"
 
 brew cleanup
 
-echo "\n> You're all done! Few more manual tasks:\n* Login with the GitHub CLI via 'gh auth login'\n* Sync the configs from /cross-platform + /osx\n* Setup your GPG key to sign commits (https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key) \n* (Optional) Install the Alacritty terminal: https://alacritty.org/\n* (Optional) Install VS Code: https://code.visualstudio.com/download\n* Install Docker: https://www.docker.com/products/docker-desktop/\n* (Optional) Install Raycast: https://www.raycast.com/"
+echo "\n> You're all done! Few more manual tasks:
+\n* Login with the GitHub CLI via 'gh auth login'
+\n* Sync the configs from your devices by running 'sh sync-to-machine.sh'
+\n* Setup your GPG key to sign commits: https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+\n* Install VS Code: https://code.visualstudio.com/download
+\n* Install Docker: https://www.docker.com/products/docker-desktop/
+\n* Install Raycast: https://www.raycast.com/"
 

@@ -1,4 +1,4 @@
-# .timrodzrc
+# dotfiles AKA configs
 
 A handy tool set for setting up my computers, featuring OSX + Ubuntu + Windows (WSL)
 

@@ -27,9 +27,11 @@ brew install gh gnupg
 
 echo "\n> Terminal fun: Installing Alacritty + Tmux + NeoVim + FZF + Zoxide"
 
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
 brew install --cask alacritty
 brew install neovim fzf zoxide tmux
 
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 git config --global core.editor nvim
 
 echo "\n> Installing Node + dependencies"

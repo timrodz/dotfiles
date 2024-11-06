@@ -48,19 +48,6 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 
-# Ubuntu
-bindkey "^[[1;3D" backward-word
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;4D" beginning-of-line
-bindkey "^[[1;4C" end-of-line
-
-# OS X
-bindkey "^[1;3D" backward-word
-bindkey "^[1;3C" forward-word
-bindkey "^[[1;9D" beginning-of-line
-bindkey "^[[1;9C" end-of-line
-
-
 # History
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -96,7 +83,6 @@ alias pom="pull origin main"
 alias pomr="pull origin main --rebase"
 alias m="git checkout main"
 alias src="cd '$HOME/src'"
-alias fv="cd '$HOME/src/futureverse'"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"

@@ -21,9 +21,9 @@ echo "\n> Installing Homebrew"
 # https://brew.sh/
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-echo "\n> Installing the GitHub CLI + gnupg"
+echo "\n> Installing the GitHub CLI"
 
-brew install gh gnupg
+brew install gh
 
 echo "\n> Terminal fun: Installing Alacritty + Tmux + NeoVim + FZF + Zoxide"
 

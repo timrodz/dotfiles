@@ -15,6 +15,9 @@ echo "\n> Setting up the git config"
 git config --global user.name "Juan Morais"
 git config --global user.email "timrodz@icloud.com"
 git config --global pull.rebase true
+git config --global commit.gpgsign true
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/github.pub
 
 echo "\n> Installing Homebrew"
 

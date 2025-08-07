@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm'
 local module = {}
 
-local project_dir = wezterm.home_dir .. "/src"
+local project_dir = wezterm.home_dir .. '/src'
 
 local function project_dirs()
   -- Start with your home directory as a project, 'cause you might want
@@ -25,11 +25,11 @@ function module.choose_project()
   end
 
   return wezterm.action.InputSelector {
-    title = "Projects",
+    title = 'Projects',
     choices = choices,
     fuzzy = true,
     action = wezterm.action_callback(function(child_window, child_pane, id, label)
-      -- "label" may be empty if nothing was selected. Don't bother doing anything
+      -- 'label' may be empty if nothing was selected. Don't bother doing anything
       -- when that happens.
       if not label then return end
 
@@ -38,7 +38,7 @@ function module.choose_project()
       child_window:perform_action(wezterm.action.SwitchToWorkspace {
         -- We'll give our new workspace a nice name, like the last path segment
         -- of the directory we're opening up.
-        name = label:match("([^/]+)$"),
+        name = label:match('([^/]+)$'),
         -- Here's the meat. We'll spawn a new terminal with the current working
         -- directory set to the directory that was picked.
         spawn = { cwd = label },

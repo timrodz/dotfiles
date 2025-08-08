@@ -10,28 +10,21 @@ local config = wezterm.config_builder()
 
 local system_os = utils.get_os_name()
 
--- VISUALS
-
--- Font
-config.font_size = 13
-config.font = wezterm.font 'JetBrainsMono Nerd Font'
-
 -- OS-specific settings
 if (system_os == 'windows') then
   config.wsl_domains = {
     {
-      name = 'WSL:Ubuntu',
-      distribution = 'Ubuntu',
+      name = "WSL:Ubuntu",
+      distribution = "Ubuntu",
     },
   }
-  config.default_domain = 'WSL:Ubuntu'
+  config.default_domain = "WSL:Ubuntu"
   config.window_background_opacity = 0.9
   config.win32_system_backdrop = 'Acrylic'
 elseif system_os == 'linux' then
   config.window_background_opacity = 0.2
   config.kde_window_background_blur = true
 else
-  config.font_size = 15
   config.set_environment_variables = {
     PATH = '/opt/homebrew/bin:' .. os.getenv('PATH')
   }
@@ -54,8 +47,12 @@ config.initial_cols = 120
 config.initial_rows = 28
 config.switch_to_last_active_tab_when_closing_tab = true
 
-config.pane_focus_follows_mouse = true
+config.pane_focus_follows_mouse = false
 config.scrollback_lines = 5000
+
+-- Font
+config.font_size = 15
+-- config.font = wezterm.font 'JetBrainsMono Nerd Font'
 
 -- Theme
 if appearance.is_dark() then
@@ -97,7 +94,7 @@ wezterm.on('update-status', function(window, _)
 
   -- Each powerline segment is going to be coloured progressively
   -- darker/lighter depending on whether we're on a dark/light colour
-  -- scheme. Let's establish the 'from' and 'to' bounds of our gradient.
+  -- scheme. Let's establish the "from" and "to" bounds of our gradient.
   local gradient_to, gradient_from = bg, nil
   if appearance.is_dark() then
     gradient_from = gradient_to:lighten(0.2)
@@ -142,7 +139,7 @@ config.keys = {
   {
     -- When the left arrow is pressed
     key = 'LeftArrow',
-    -- With the 'Option' key modifier held down
+    -- With the "Option" key modifier held down
     mods = 'OPT',
     -- Perform this action, in this case - sending ESC + B
     -- to the terminal

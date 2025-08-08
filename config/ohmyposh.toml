@@ -1,96 +1,114 @@
-#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
-
-version = 2
-final_space = true
 console_title_template = '{{ .Shell }} in {{ .Folder }}'
-
-[[blocks]]
-  type = 'prompt'
-  alignment = 'left'
-  newline = true
-
-  [[blocks.segments]]
-    type = 'path'
-    style = 'diamond'
-    background = '#FEF5ED'
-    foreground = '#011627'
-    trailing_diamond = ""
-    template = ' {{ .Path }} '
-
-    [blocks.segments.properties]
-      style = 'full'
-  
-  [[blocks.segments]]
-    type = 'git'
-    style = 'diamond'
-    background = '#516BEB'
-    foreground = '#FFFFFF'
-    trailing_diamond = ""
-    template = " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <white>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</> "
-
-    [blocks.segments.properties]
-      branch_icon = ''
-      commit_icon = '@'
-      fetch_status = true
-
-[[blocks]]
-  type = 'prompt'
-  alignment='right'
-
-  [[blocks.segments]]
-    type = 'node'
-    style = 'diamond'
-    background = '#17D7A0'
-    foreground = '#011627'
-    leading_diamond = "\ue0ba"
-    template = '  {{ .Full }} '
-
-  [[blocks.segments]]
-    type = 'elixir'
-    style = 'diamond'
-    background = '#17D7A0'
-    foreground = '#011627'
-    leading_diamond = "\ue0ba"
-    template = '  {{ .Full }} '
-
-[[blocks]]
-  type = 'rprompt'
-  overflow = 'hidden'
-
-  [[blocks.segments]]
-    type = 'executiontime'
-    style = 'plain'
-    background = 'transparent'
-    foreground = '#FEF5ED'
-    template = '{{ .FormattedMs }}'
-
-    [blocks.segments.properties]
-      threshold = 5000
-
-[[blocks]]
-  type = 'prompt'
-  alignment = 'left'
-  newline = true
-
-  [[blocks.segments]]
-    type = 'text'
-    style = 'plain'
-    foreground_templates = [
-      "{}red{{end}}",
-      "{{if eq .Code 0}}#FF5795{{end}}",
-    ]
-    background = 'transparent'
-    template = '❯'
-
-[transient_prompt]
-  foreground_templates = [
-    "{{if gt .Code 0}}red{{end}}",
-    "{{if eq .Code 0}}#FF5795{{end}}",
-  ]
-  background = 'transparent'
-  template = '❯ '
+version = 3
+final_space = true
 
 [secondary_prompt]
-  background = 'transparent'
-  foreground = '#FF5795'
-  template = '❯❯ '
+template = '❯❯ '
+foreground = '#FF5795'
+background = 'transparent'
+
+[transient_prompt]
+template = '❯ '
+background = 'transparent'
+foreground_templates = [
+  '{{if gt .Code 0}}red{{end}}',
+  '{{if eq .Code 0}}#FF5795{{end}}',
+]
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+[[blocks.segments]]
+trailing_diamond = ''
+template = ' {{ .Path }} '
+foreground = '#011627'
+background = '#FEF5ED'
+type = 'path'
+style = 'diamond'
+
+[blocks.segments.properties]
+cache_duration = 'none'
+style = 'full'
+
+[[blocks.segments]]
+trailing_diamond = ''
+template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} {{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }} '
+foreground = '#FFFFFF'
+background = '#516BEB'
+type = 'git'
+style = 'diamond'
+
+[blocks.segments.properties]
+branch_icon = ''
+cache_duration = 'none'
+commit_icon = '@'
+fetch_status = true
+
+[[blocks]]
+type = 'prompt'
+alignment = 'right'
+
+[[blocks.segments]]
+leading_diamond = ''
+template = '  {{ .Full }} '
+foreground = '#011627'
+background = '#17D7A0'
+type = 'node'
+style = 'diamond'
+
+[blocks.segments.properties]
+cache_duration = 'none'
+
+[[blocks.segments]]
+leading_diamond = ''
+template = '  {{ .Full }} '
+foreground = '#011627'
+background = '#17D7A0'
+type = 'python'
+style = 'diamond'
+
+[blocks.segments.properties]
+cache_duration = 'none'
+
+[[blocks.segments]]
+leading_diamond = ''
+template = '  {{ .Full }} '
+foreground = '#011627'
+background = '#17D7A0'
+type = 'elixir'
+style = 'diamond'
+
+[blocks.segments.properties]
+cache_duration = 'none'
+
+[[blocks]]
+type = 'rprompt'
+overflow = 'hidden'
+
+[[blocks.segments]]
+template = '{{ .FormattedMs }}'
+foreground = '#FEF5ED'
+background = 'transparent'
+type = 'executiontime'
+style = 'plain'
+
+[blocks.segments.properties]
+cache_duration = 'none'
+threshold = 5000
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+[[blocks.segments]]
+template = '❯'
+background = 'transparent'
+type = 'text'
+style = 'plain'
+foreground_templates = ['{}red{{end}}', '{{if eq .Code 0}}#FF5795{{end}}']
+
+[blocks.segments.properties]
+cache_duration = 'none'

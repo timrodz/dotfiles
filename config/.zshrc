@@ -3,7 +3,6 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
 fi
 
 if [[ -f "/opt/homebrew/bin/brew" ]] then
-  # If you're using macOS, you'll want this enabled
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
@@ -24,7 +23,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
-zinit load asdf-vm/asdf
 
 # Add in snippets
 zinit snippet OMZP::git
@@ -69,9 +67,9 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color'
-alias v='nvim'
-alias c='clear'
+alias ls="ls --color"
+alias v="nvim"
+alias c="clear"
 alias gs="git status"
 alias gc="git checkout"
 alias gap="git add -p"
@@ -83,15 +81,26 @@ alias pom="pull origin main"
 alias pomr="pull origin main --rebase"
 alias m="git checkout main"
 alias src="cd '$HOME/src'"
+alias ssh-setup="ssh-add ~/.ssh/github"
 
 # NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+ export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/opt/homebrew/opt/openssl@1.1/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
 
+export ASDF_DATA_DIR=$HOME/.asdf
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
+
+fpath=(${ASDF_DATA_DIR/shims}/completions $fpath)
+
+# Test for Erlang + Elixir
+export PATH=$HOME/.asdf/installs/erlang/26.0.2/erts-14.0.2/bin:$PATH
+export PATH=$HOME/.asdf/installs/elixir/1.15.6-otp-26/bin:$PATH
+
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+. "$HOME/.local/bin/env"
